@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "image": "maestro.png",
+  "name": "Built-In Tests",
+  "description": "Enables the built-in test tasks in Maestro",
+  "author": "Doug Henderson <dhenderson@maestrodev.com>",
+  "version": "0.01",
+  "type": "builtin",
+  "tool_name": "BuiltIn Utility",
+  "tasks": [{
+    "name": "echo",
+    "description": "Echo some text in agent output",
+    "task":{
+      "command": "/test/echo",
+      "inputs": {
+        "text": {
+          "label": "Text",
+          "description": "The text to output",
+          "required": false,
+          "type": "String",
+          "value": "Hello"
+        }
+      },
+      "image": "echo.png"
+    }
+  },
+  {
+    "name": "fail",
+    "description": "Cause a composition to fail",
+    "task":{
+      "command": "/test/fail",
+      "inputs": {
+        "text": {
+          "label": "Text",
+          "description": "Optional text to output before failing",
+          "required": false,
+          "type": "String",
+          "value": "Hello"
+        },
+        "error": {
+          "label": "Error Message",
+          "description": "Error to generate (text)",
+          "required": false,
+          "type": "String",
+          "value": "Error"
+        }
+      },
+      "image": "fail.png"
+    }
+  },
+  {
+    "name": "get-set-var",
+    "description": "Set a named context variable, and output previous version",
+    "task":{
+      "command": "/test/get_set_var",
+      "inputs": {
+        "name": {
+          "label": "Variable Name",
+          "description": "Name of context variable to set",
+          "required": false,
+          "type": "String",
+          "value": "variable"
+        },
+        "value": {
+          "label": "New Value",
+          "description": "New value to set for above variable",
+          "required": true,
+          "type": "String"
+        }
+      },
+      "image": "get-set-var.png"
+    }
+  },
+  {
+    "name": "not-needed",
+    "description": "Cause a composition to complete with NOT NEEDED status",
+    "task":{
+      "command": "/test/notneeded",
+      "inputs": {
+        "text": {
+          "label": "Text",
+          "description": "The text to output (optional)",
+          "required": false,
+          "type": "String"
+        }
+      },
+      "image": "not-needed.png"
+    }
+  },
+  {
+    "name": "wait",
+    "description": "Wait for some time and then continue",
+    "task":{
+      "command": "/test/wait",
+      "inputs": {
+        "delay": {
+          "label": "Delay",
+          "description": "How long to wait (seconds)",
+          "required": false,
+          "type": "Integer",
+          "value": 5
+        }
+      },
+      "image": "wait.png"
+    }
+  } ]
+}

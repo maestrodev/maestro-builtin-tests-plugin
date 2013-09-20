@@ -1,4 +1,5 @@
 maestro-builtin-tests-plugin
-============================
+====================
 
-Enables test tasks built into MaestroAgent
+A Maestro Plugin that enables the built-in test tasks within MaestroAgent
+
