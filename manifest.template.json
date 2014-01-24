@@ -107,6 +107,410 @@
         },
         "image": "wait.png"
       }
+    },
+    {
+      "name": "fields_all_no-req_no-def",
+      "description": "Present all available field types in editor as non-required, no-default",
+      "task": {
+        "command": "/test/echo",
+        "inputs": {
+          "str": {
+            "label": "#1 String",
+            "description": "Field #1, String, no required, no default",
+            "required": false,
+            "type": "String"
+          },
+          "int": {
+            "label": "#1 Integer",
+            "description": "Field #2, Integer, no required, no default",
+            "required": false,
+            "type": "Integer"
+          },
+          "bool": {
+            "label": "#1 Boolean",
+            "description": "Field #3, Boolean, no required, no default",
+            "required": false,
+            "type": "Boolean"
+          },
+          "pwd": {
+            "label": "#1 Password",
+            "description": "Field #4, Password, no required, no default",
+            "required": false,
+            "type": "Password"
+          },
+          "array": {
+            "label": "#1 Array",
+            "description": "Field #5, Array, no required, no default",
+            "required": false,
+            "type": "Array"
+          },
+          "url": {
+            "label": "#1 Url",
+            "description": "Field #6, Url, no required, no default",
+            "required": false,
+            "type": "Url"
+          },
+          "email": {
+            "label": "#1 Email",
+            "description": "Field #7, Email, no required, no default",
+            "required": false,
+            "type": "Email"
+          },
+          "text": {
+            "label": "#1 Text",
+            "description": "Field #8, Text, no required, no default",
+            "required": false,
+            "type": "Text"
+          },
+          "date": {
+            "label": "#1 Date",
+            "description": "Field #9, Date (only date portion), no required, no default (see ISO-8601)",
+            "required": false,
+            "type": "Date"
+          },
+          "time": {
+            "label": "#1 Time",
+            "description": "Field #10, Time (only time portion), no required, no default (see ISO-8601)",
+            "required": false,
+            "type": "Time"
+          },
+          "datetime": {
+            "label": "#1 DateTime",
+            "description": "Field #11, DateTime, no required, no default (see ISO-8601)",
+            "required": false,
+            "type": "DateTime"
+          }
+        },
+        "image": "editor.png"
+      }
+    },
+    {
+      "name": "fields_all_no-req_def",
+      "description": "Present all available field types in editor as non-required, default supplied",
+      "task": {
+        "command": "/test/echo",
+        "inputs": {
+          "str": {
+            "label": "#1 String",
+            "description": "Field #1, String, no required, default: 'string_1_default'",
+            "required": false,
+            "type": "String",
+            "value": "string_1_default"
+          },
+          "int": {
+            "label": "#1 Integer",
+            "description": "Field #2, Integer, no required, default: 2",
+            "required": false,
+            "type": "Integer",
+            "value": 2
+          },
+          "bool": {
+            "label": "#1 Boolean",
+            "description": "Field #3, Boolean, no required, default: true",
+            "required": false,
+            "type": "Boolean",
+            "value": true
+          },
+          "pwd": {
+            "label": "#1 Password",
+            "description": "Field #4, Password, no required, default: 'pass'",
+            "required": false,
+            "type": "Password",
+            "value": "pass"
+          },
+          "array": {
+            "label": "#1 Array",
+            "description": "Field #5, Array, no required, default: ['string 1', 'string 2']",
+            "required": false,
+            "type": "Array",
+            "value": ["string 1", "string 2"]
+          },
+          "url": {
+            "label": "#1 Url",
+            "description": "Field #6, Url, no required, default: 'http://localhost'",
+            "required": false,
+            "type": "Url",
+            "value": "http://localhost"
+          },
+          "email": {
+            "label": "#1 Email",
+            "description": "Field #7, Email, no required, default: 'root@localhost'",
+            "required": false,
+            "type": "Email",
+            "value": "root@localhost"
+          },
+          "text": {
+            "label": "#1 Text",
+            "description": "Field #8, Text, no required, default: 'a^Mmultiline^Mstring",
+            "required": false,
+            "type": "Text",
+            "value": "a\nmultiline\nstring"
+          },
+          "date": {
+            "label": "#1 Date",
+            "description": "Field #9, Date (only date portion), no required, default: '2014-01-26' (see ISO-8601)",
+            "required": false,
+            "type": "Date",
+            "value": "2014-01-26"
+          },
+          "time": {
+            "label": "#1 Time",
+            "description": "Field #10, Time (only time portion), no required, default: '19:11:15' (see ISO-8601)",
+            "required": false,
+            "type": "Time",
+            "value": "19:11:15"
+          },
+          "datetime": {
+            "label": "#1 DateTime",
+            "description": "Field #11, DateTime, no required, default '2014-01-26T19:11:15' (see ISO-8601)",
+            "required": false,
+            "type": "DateTime",
+            "value": "2014-01-26T19:11:15"
+          }
+        },
+        "image": "editor.png"
+      }
+    },
+    {
+      "name": "fields_all_req_no-def",
+      "description": "Present all available field types in editor as required, no-default",
+      "task": {
+        "command": "/test/echo",
+        "inputs": {
+          "str": {
+            "label": "#1 String",
+            "description": "Field #1, String, required, no default",
+            "required": true,
+            "type": "String"
+          },
+          "int": {
+            "label": "#1 Integer",
+            "description": "Field #2, Integer, required, no default",
+            "required": true,
+            "type": "Integer"
+          },
+          "bool": {
+            "label": "#1 Boolean",
+            "description": "Field #3, Boolean, required, no default",
+            "required": true,
+            "type": "Boolean"
+          },
+          "pwd": {
+            "label": "#1 Password",
+            "description": "Field #4, Password, required, no default",
+            "required": true,
+            "type": "Password"
+          },
+          "array": {
+            "label": "#1 Array",
+            "description": "Field #5, Array, required, no default",
+            "required": true,
+            "type": "Array"
+          },
+          "url": {
+            "label": "#1 Url",
+            "description": "Field #6, Url, required, no default",
+            "required": true,
+            "type": "Url"
+          },
+          "email": {
+            "label": "#1 Email",
+            "description": "Field #7, Email, required, no default",
+            "required": true,
+            "type": "Email"
+          },
+          "text": {
+            "label": "#1 Text",
+            "description": "Field #8, Text, required, no default",
+            "required": true,
+            "type": "Text"
+          },
+          "date": {
+            "label": "#1 Date",
+            "description": "Field #9, Date (only date portion), required, no default (see ISO-8601)",
+            "required": true,
+            "type": "Date"
+          },
+          "time": {
+            "label": "#1 Time",
+            "description": "Field #10, Time (only time portion), required, no default (see ISO-8601)",
+            "required": true,
+            "type": "Time"
+          },
+          "datetime": {
+            "label": "#1 DateTime",
+            "description": "Field #11, DateTime, required, no default (see ISO-8601)",
+            "required": true,
+            "type": "DateTime"
+          }
+        },
+        "image": "editor.png"
+      }
+    },
+    {
+      "name": "fields_all_req_def",
+      "description": "Present all available field types in editor as required, default supplied",
+      "task": {
+        "command": "/test/echo",
+        "inputs": {
+          "str": {
+            "label": "#1 String",
+            "description": "Field #1, String, required, default: 'string_1_default'",
+            "required": true,
+            "type": "String",
+            "value": "string_1_default"
+          },
+          "int": {
+            "label": "#1 Integer",
+            "description": "Field #2, Integer, required, default: 2",
+            "required": true,
+            "type": "Integer",
+            "value": 2
+          },
+          "bool": {
+            "label": "#1 Boolean",
+            "description": "Field #3, Boolean, required, default: true",
+            "required": true,
+            "type": "Boolean",
+            "value": true
+          },
+          "pwd": {
+            "label": "#1 Password",
+            "description": "Field #4, Password, required, default: 'pass'",
+            "required": true,
+            "type": "Password",
+            "value": "pass"
+          },
+          "array": {
+            "label": "#1 Array",
+            "description": "Field #5, Array, required, default: ['string 1', 'string 2']",
+            "required": true,
+            "type": "Array",
+            "value": ["string 1", "string 2"]
+          },
+          "url": {
+            "label": "#1 Url",
+            "description": "Field #6, Url, required, default: 'http://localhost'",
+            "required": true,
+            "type": "Url",
+            "value": "http://localhost"
+          },
+          "email": {
+            "label": "#1 Email",
+            "description": "Field #7, Email, required, default: 'root@localhost'",
+            "required": true,
+            "type": "Email",
+            "value": "root@localhost"
+          },
+          "text": {
+            "label": "#1 Text",
+            "description": "Field #8, Text, required, default: 'a^Mmultiline^Mstring",
+            "required": true,
+            "type": "Text",
+            "value": "a\nmultiline\nstring"
+          },
+          "date": {
+            "label": "#1 Date",
+            "description": "Field #9, Date (only date portion), required, default: '2014-01-26' (see ISO-8601)",
+            "required": true,
+            "type": "Date",
+            "value": "2014-01-26"
+          },
+          "time": {
+            "label": "#1 Time",
+            "description": "Field #10, Time (only time portion), required, default: '19:11:15' (see ISO-8601)",
+            "required": true,
+            "type": "Time",
+            "value": "19:11:15"
+          },
+          "datetime": {
+            "label": "#1 DateTime",
+            "description": "Field #11, DateTime, required, default '2014-01-26T19:11:15' (see ISO-8601)",
+            "required": true,
+            "type": "DateTime",
+            "value": "2014-01-26T19:11:15"
+          }
+        },
+        "image": "editor.png"
+      }
+    },
+    {
+      "name": "fields_choices",
+      "description": "Present string fields with choices available (both variants)",
+      "task": {
+        "command": "/test/echo",
+        "inputs": {
+          "str1": {
+            "label": "#1 String",
+            "description": "Field #1, String, required, no default, choices 'AAA', 'BBB', 'CCC' as list (no k/v)",
+            "required": true,
+            "type": "String",
+            "choices": ["AAA", "BBB", "CCC"]
+          },
+          "str2": {
+            "label": "#2 String",
+            "description": "Field #2, String, required, default 'BBB', choices 'AAA', 'BBB', 'CCC' as list (no k/v)",
+            "required": true,
+            "type": "String",
+            "choices": ["AAA", "BBB", "CCC"],
+            "value": "BBB"
+          },
+          "str3": {
+            "label": "#3 String",
+            "description": "Field #3, String, required, no default, choices 'AAA', 'BBB', 'CCC' but presented as 'Option A', 'Option B', 'Option C' using k/v list",
+            "required": true,
+            "type": "String",
+            "choices": { "AAA": "Option A", "BBB": "Option B", "CCC": "Option C"}
+          },
+          "str4": {
+            "label": "#4 String",
+            "description": "Field #4, String, required, default 'CCC', choices 'AAA', 'BBB', 'CCC' but presented as 'Option A', 'Option B', 'Option C' using k/v list",
+            "required": true,
+            "type": "String",
+            "choices": { "AAA": "Option A", "BBB": "Option B", "CCC": "Option C"},
+            "value": "CCC"
+          }
+        },
+        "image": "editor.png"
+      }
+    },
+    {
+      "name": "fields_misc",
+      "description": "Present string fields with validation or source options",
+      "task": {
+        "command": "/test/echo",
+        "inputs": {
+          "str1": {
+            "label": "#1 String",
+            "description": "Field #1, String, required, no default, validation regex '^\\d\\d-.*$' (two digits, followed by hyphen, followed by whatever)",
+            "required": false,
+            "type": "String",
+            "validation_regex": "^\\d\\d-.*$"
+          },
+          "str2": {
+            "label": "#2 String",
+            "description": "Field #2, String, no required, no default, source option 'never' (this field cannot be specified in a source)",
+            "required": false,
+            "type": "String",
+            "source_option": "never"
+          },
+          "str3": {
+            "label": "#3 String",
+            "description": "Field #3, String, no required, no default, source option 'fixed' (if specified by a source, this field cannot be edited)",
+            "required": false,
+            "type": "String",
+            "source_option": "fixed"
+          },
+          "str4": {
+            "label": "#4 String",
+            "description": "Field #4, String, no required, no default, source option 'override' (even if specified by a source, this field can be manually specified)",
+            "required": false,
+            "type": "String",
+            "source_option": "never"
+          }
+        },
+        "image": "editor.png"
+      }
     }
   ]
 }
