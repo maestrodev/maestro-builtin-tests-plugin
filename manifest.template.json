@@ -6,6 +6,7 @@
   "author": "Doug Henderson <dhenderson@maestrodev.com>",
   "type": "builtin",
   "tool_name": "BuiltIn Utility",
+  "version": "Set by build-tool",
   "tags": [
     "maestro",
     "test"
@@ -160,7 +161,8 @@
             "label": "#1 Text",
             "description": "Field #8, Text, no required, no default",
             "required": false,
-            "type": "Text"
+            "type": "Text",
+            "line_count": 5
           },
           "date": {
             "label": "#1 Date",
@@ -244,7 +246,8 @@
             "description": "Field #8, Text, no required, default: 'a^Mmultiline^Mstring",
             "required": false,
             "type": "Text",
-            "value": "a\nmultiline\nstring"
+            "value": "a\nmultiline\nstring",
+            "line_count": 8
           },
           "date": {
             "label": "#1 Date",
@@ -321,9 +324,10 @@
           },
           "text": {
             "label": "#1 Text",
-            "description": "Field #8, Text, required, no default",
+            "description": "Field #8, Text, required, no default, 4 lines",
             "required": true,
-            "type": "Text"
+            "type": "Text",
+            "line_count": 4
           },
           "date": {
             "label": "#1 Date",
@@ -404,7 +408,7 @@
           },
           "text": {
             "label": "#1 Text",
-            "description": "Field #8, Text, required, default: 'a^Mmultiline^Mstring",
+            "description": "Field #8, Text, required, default: 'a^Mmultiline^Mstring', default line count",
             "required": true,
             "type": "Text",
             "value": "a\nmultiline\nstring"
@@ -483,7 +487,7 @@
           "str1": {
             "label": "#1 String",
             "description": "Field #1, String, required, no default, validation regex '^\\d\\d-.*$' (two digits, followed by hyphen, followed by whatever)",
-            "required": false,
+            "required": true,
             "type": "String",
             "validation_regex": "^\\d\\d-.*$"
           },
@@ -510,6 +514,197 @@
           }
         },
         "image": "editor.png"
+      }
+    },
+    {
+      "name": "groups",
+      "description": "Some groups showing ordering, group membership, and visibility settings",
+      "task": {
+        "command": "/test/echo",
+        "groups": {
+          "grp1": {
+            "label": "#1 Group (pos = 2)",
+            "description": "Group #1, should be in position #2 (to confirm ordering by 'position' param)",
+            "position": 2
+          },
+          "grp2": {
+            "label": "#2 Group (pos = 3) (hidden)",
+            "description": "Group #2, should be in position #3, but not visible unless whatever 'show hidden groups' permission is set",
+            "visible": false,
+            "position": 3
+          },
+          "grp3": {
+            "label": "#3 Group (pos = 1)",
+            "description": "Group #3, should be in position #1 (note field 'position' values should be ordered in ascending position #, but within groups)",
+            "position": 1
+          },
+          "grp4": {
+            "label": "#4 Group (pos = 4) (collapsed)",
+            "description": "Group #4, should be last (position #4), but default to 'collapsed'",
+            "position": 4,
+            "expanded": false
+          }
+        },
+        "inputs": {
+          "str1": {
+            "label": "#1 String",
+            "description": "Field #1, String, no required, no default, position 8, group 'grp4'",
+            "required": false,
+            "type": "String",
+            "position": 8,
+            "group": "grp4"
+          },
+          "str2": {
+            "label": "#2 String",
+            "description": "Field #2, String, required, no default, position 7, group 'grp2'",
+            "required": true,
+            "type": "String",
+            "position": 7,
+            "group": "grp2"
+          },
+          "str3": {
+            "label": "#3 String",
+            "description": "Field #3, String, no required, no default, position 6, group 'grp1'",
+            "required": false,
+            "type": "String",
+            "position": 6,
+            "group": "grp1"
+          },
+          "str4": {
+            "label": "#4 String",
+            "description": "Field #4, String, no required, no default, position 5, group 'grp3'",
+            "required": false,
+            "type": "String",
+            "position": 5,
+            "group": "grp3"
+          },
+          "str5": {
+            "label": "#5 String",
+            "description": "Field #5, String, no required, no default, position 4, no group - should appear at top/bottom based on 'no group' logic of UI",
+            "required": false,
+            "type": "String",
+            "position": 4
+          },
+          "str6": {
+            "label": "#6 String",
+            "description": "Field #6, String, no required, no default, position 3, group 'grp1'",
+            "required": false,
+            "type": "String",
+            "position": 3,
+            "group": "grp1"
+          },
+          "str7": {
+            "label": "#7 String",
+            "description": "Field #7, String, no required, no default, position 2, group 'grp2'",
+            "required": false,
+            "type": "String",
+            "position": 2,
+            "group": "grp2"
+          },
+          "str8": {
+            "label": "#8 String",
+            "description": "Field #8, String, no required, no default, position 1, group 'grp3'",
+            "required": false,
+            "type": "String",
+            "position": 1,
+            "group": "grp3"
+          }
+        },
+        "image": "editor.png"
+      }
+    }
+  ],
+  "source_types": [
+    {
+      "name": "groupie source-type",
+      "groups": {
+        "grp1": {
+          "label": "#1 Group",
+          "description": "Group #1, should be in position #2 (to confirm ordering by 'position' param)",
+          "position": 2
+        },
+        "grp2": {
+          "label": "#2 Group",
+          "description": "Group #2, should be in position #3, but not visible unless whatever 'show hidden groups' permission is set",
+          "visible": false,
+          "position": 3
+        },
+        "grp3": {
+          "label": "#3 Group",
+          "description": "Group #3, should be in position #1 (note field 'position' values should be ordered in ascending position #, but within groups)",
+          "position": 1
+        },
+        "grp4": {
+          "label": "#4 Group",
+          "description": "Group #4, should be last (position #4), but default to 'collapsed'",
+          "position": 4,
+          "expanded": false
+        }
+      },
+      "inputs": {
+        "str1": {
+          "label": "#1 String",
+          "description": "Field #1, String, no required, no default, position 8, group 'grp4'",
+          "required": false,
+          "type": "String",
+          "position": 8,
+          "group": "grp4"
+        },
+        "str2": {
+          "label": "#2 String",
+          "description": "Field #2, String, no required, no default, position 7, group 'grp2'",
+          "required": false,
+          "type": "String",
+          "position": 7,
+          "group": "grp2"
+        },
+        "str3": {
+          "label": "#3 String",
+          "description": "Field #3, String, no required, no default, position 6, group 'grp1'",
+          "required": false,
+          "type": "String",
+          "position": 6,
+          "group": "grp1"
+        },
+        "str4": {
+          "label": "#4 String",
+          "description": "Field #4, String, no required, no default, position 5, group 'grp3'",
+          "required": false,
+          "type": "String",
+          "position": 5,
+          "group": "grp3"
+        },
+        "str5": {
+          "label": "#5 String",
+          "description": "Field #5, String, no required, no default, position 4, no group - should appear at top/bottom based on 'no group' logic of UI",
+          "required": false,
+          "type": "String",
+          "position": 4
+        },
+        "str6": {
+          "label": "#6 String",
+          "description": "Field #6, String, no required, no default, position 3, group 'grp1'",
+          "required": false,
+          "type": "String",
+          "position": 3,
+          "group": "grp1"
+        },
+        "str7": {
+          "label": "#7 String",
+          "description": "Field #7, String, no required, no default, position 2, group 'grp2'",
+          "required": false,
+          "type": "String",
+          "position": 2,
+          "group": "grp2"
+        },
+        "str8": {
+          "label": "#8 String",
+          "description": "Field #8, String, no required, no default, position 1, group 'grp3'",
+          "required": false,
+          "type": "String",
+          "position": 1,
+          "group": "grp3"
+        }
       }
     }
   ]
